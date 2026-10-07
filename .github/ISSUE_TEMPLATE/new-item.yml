@@ -1,13 +1,9 @@
-name: New Item Request
-description: Submit a new item, feature, model, or customer request
+name: New Request
+description: Submit a new feature, model request
 title: "[NEW ITEM] "
 labels:
   - new-item
 body:
-
-  # ============================================================
-  # 1. GENERAL
-  # ============================================================
 
   - type: markdown
     attributes:
@@ -93,11 +89,6 @@ body:
     validations:
       required: false
 
-
-  # ============================================================
-  # 2. VIDEO / MODEL REQUIREMENTS
-  # ============================================================
-
   - type: markdown
     attributes:
       value: |
@@ -129,11 +120,6 @@ body:
         - label: Event Detection
         - label: New feature
         - label: Other
-
-
-  # ============================================================
-  # 3. BUSINESS / SALES
-  # ============================================================
 
   - type: markdown
     attributes:
@@ -226,11 +212,6 @@ body:
     validations:
       required: true
 
-
-  # ============================================================
-  # 4. MODEL REQUIREMENTS
-  # ============================================================
-
   - type: markdown
     attributes:
       value: |
@@ -276,11 +257,6 @@ body:
       placeholder: "Name / Team / Slack handle"
     validations:
       required: false
-
-
-  # ============================================================
-  # 5. DATA
-  # ============================================================
 
   - type: markdown
     attributes:

@@ -1,15 +1,9 @@
-```text
 name: New Item Request
 description: Submit a new item, feature, model, or customer request
 title: "[NEW ITEM] "
 labels:
   - new-item
 body:
-
-  # ============================================================
-  # 1. GENERAL
-  # ============================================================
-
   - type: markdown
     attributes:
       value: |
@@ -78,7 +72,7 @@ body:
     id: amount-requesters
     attributes:
       label: Amount of requesters
-      description: Filled in internally. How many requesters are associated with this request?
+      description: Filled in internally.
       placeholder: "e.g. 5"
     validations:
       required: false
@@ -92,17 +86,10 @@ body:
     validations:
       required: false
 
-
-  # ============================================================
-  # 2. VIDEO / MODEL REQUIREMENTS
-  # ============================================================
-
   - type: markdown
     attributes:
       value: |
         ## 2. Video / Model Requirements
-
-        Select all video/model requirements that apply.
 
   - type: checkboxes
     id: vd-pro
@@ -135,20 +122,14 @@ body:
     id: video-model-details
     attributes:
       label: Video / Model Requirements Details
-      description: Add any additional details about the selected requirements.
       placeholder: "Describe the required output, behavior, event, or model."
-
-
-  # ============================================================
-  # 3. BUSINESS / SALES
-  # ============================================================
+    validations:
+      required: false
 
   - type: markdown
     attributes:
       value: |
         ## 3. Business / Sales
-
-        Provide the commercial and strategic context for this request.
 
   - type: dropdown
     id: customer-prospect
@@ -185,7 +166,6 @@ body:
     id: revenue-potential
     attributes:
       label: Revenue potential
-      description: Describe the expected revenue opportunity.
       placeholder: "e.g. €50k ARR, expansion opportunity, new deal, retention..."
     validations:
       required: false
@@ -233,28 +213,19 @@ body:
     id: business-reason
     attributes:
       label: Why is this feature/model needed to win or retain the customer?
-      description: Explain the commercial importance of this request.
-      placeholder: "e.g. Required to close the deal, prevent churn, expand existing contract..."
+      placeholder: "Explain the commercial importance of this request."
     validations:
       required: true
-
-
-  # ============================================================
-  # 4. MODEL REQUIREMENTS
-  # ============================================================
 
   - type: markdown
     attributes:
       value: |
         ## 4. Model Requirements
 
-        Provide the technical/model requirements.
-
   - type: textarea
     id: required-quality
     attributes:
       label: Required quality
-      description: What level of quality or accuracy is required?
       placeholder: "e.g. 95% accuracy, production quality, MVP quality..."
     validations:
       required: true
@@ -263,8 +234,7 @@ body:
     id: dependencies
     attributes:
       label: Dependencies
-      description: List technical, data, product, or other dependencies.
-      placeholder: "e.g. Requires new camera data, event detection, existing model..."
+      placeholder: "List technical, data, product, or other dependencies."
     validations:
       required: false
 
@@ -272,7 +242,6 @@ body:
     id: reusable-functionality
     attributes:
       label: Existing model/functionality that can be reused
-      description: Mention any existing models, features, or functionality that could be reused.
       placeholder: "Model name, feature, GitHub issue, etc."
     validations:
       required: false
@@ -280,9 +249,9 @@ body:
   - type: textarea
     id: model-requirements-guide
     attributes:
-      label: Model requirements guide
-      description: Attach the relevant model requirements guide here.
-      placeholder: "Drag and drop the attachment here or paste a link."
+      label: Model requirements guide (Attachment)
+      description: Drag and drop the relevant attachment here or paste a link.
+      placeholder: "Attachment or link"
     validations:
       required: false
 
@@ -290,28 +259,19 @@ body:
     id: rules-contact
     attributes:
       label: Contactperson for Rules / Special Events
-      description: Who should be contacted regarding rules or special events?
       placeholder: "Name / Team / Slack handle"
     validations:
       required: false
-
-
-  # ============================================================
-  # 5. DATA
-  # ============================================================
 
   - type: markdown
     attributes:
       value: |
         ## 5. Data
 
-        Provide information about data availability and preparation.
-
   - type: textarea
     id: data-availability
     attributes:
       label: Data availability
-      description: What data is currently available?
       placeholder: "Describe available video, events, annotations, metadata, etc."
     validations:
       required: true
@@ -331,7 +291,6 @@ body:
     id: target-test-date
     attributes:
       label: Target test date
-      description: When should the first test be possible?
       placeholder: "YYYY-MM-DD"
     validations:
       required: true
@@ -340,7 +299,6 @@ body:
     id: annotation-requirements
     attributes:
       label: Annotation requirements
-      description: Describe what needs to be annotated and at what level of detail.
       placeholder: "Describe required annotations, events, labels, quality, volume, etc."
     validations:
       required: false
@@ -349,21 +307,6 @@ body:
     id: responsible-team
     attributes:
       label: Responsible team / owner
-      description: Which team or person is responsible for the data?
       placeholder: "Team / Name"
     validations:
       required: true
-
-
-  # ============================================================
-  # FINAL
-  # ============================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Submission
-
-        Please make sure all required information has been provided before submitting the request.
-
-        Thank you!

@@ -4,6 +4,11 @@ title: "[NEW ITEM] "
 labels:
   - new-item
 body:
+
+  # ============================================================
+  # 1. GENERAL
+  # ============================================================
+
   - type: markdown
     attributes:
       value: |
@@ -51,11 +56,13 @@ body:
     id: priority
     attributes:
       label: Priority
+      description: Select the priority of this request.
       options:
-        - Critical
-        - High
-        - Medium
-        - Low
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
     validations:
       required: true
 
@@ -85,6 +92,11 @@ body:
       placeholder: "e.g. Sportway and 5 locations from BSG"
     validations:
       required: false
+
+
+  # ============================================================
+  # 2. VIDEO / MODEL REQUIREMENTS
+  # ============================================================
 
   - type: markdown
     attributes:
@@ -118,13 +130,10 @@ body:
         - label: New feature
         - label: Other
 
-  - type: textarea
-    id: video-model-details
-    attributes:
-      label: Video / Model Requirements Details
-      placeholder: "Describe the required output, behavior, event, or model."
-    validations:
-      required: false
+
+  # ============================================================
+  # 3. BUSINESS / SALES
+  # ============================================================
 
   - type: markdown
     attributes:
@@ -217,6 +226,11 @@ body:
     validations:
       required: true
 
+
+  # ============================================================
+  # 4. MODEL REQUIREMENTS
+  # ============================================================
+
   - type: markdown
     attributes:
       value: |
@@ -262,6 +276,11 @@ body:
       placeholder: "Name / Team / Slack handle"
     validations:
       required: false
+
+
+  # ============================================================
+  # 5. DATA
+  # ============================================================
 
   - type: markdown
     attributes:

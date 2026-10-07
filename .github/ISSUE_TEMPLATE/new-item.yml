@@ -1,4 +1,4 @@
-```yaml
+```text
 name: New Item Request
 description: Submit a new item, feature, model, or customer request
 title: "[NEW ITEM] "
@@ -367,4 +367,3 @@ body:
         Please make sure all required information has been provided before submitting the request.
 
         Thank you!
-```

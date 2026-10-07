@@ -1,8 +1,5 @@
 name: New Request
 description: Submit a new feature, model request
-title: "[NEW ITEM] "
-labels:
-  - new-item
 
 body:
 

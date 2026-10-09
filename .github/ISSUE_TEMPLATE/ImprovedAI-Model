@@ -1,343 +1,309 @@
-name: Improved Model Request
-description: Request an improvement to an existing AI model.
-title: "[Improved Model] "
+name: New AI Model
+description: Submit a new model request
+
 body:
+
   - type: markdown
     attributes:
       value: |
-        # 1. General Information
-        All fields are optional.
+        ## 1. General
+
+        Please provide the general information about the request.
 
   - type: input
     id: sport
     attributes:
       label: Sport
+      description: Which sport is this request for?
+      placeholder: "e.g. Football"
+    validations:
+      required: false
 
   - type: input
-    id: target_date
+    id: target-date
     attributes:
-      label: Target Date
+      label: Target date
+      description: When is this request needed?
       placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
 
   - type: input
-    id: customer
+    id: customer-client
     attributes:
       label: Customer / Client
+      description: Who is requesting or benefiting from this item?
+      placeholder: "e.g. Sportway"
+    validations:
+      required: false
 
   - type: input
-    id: request_owner
+    id: request-owner
     attributes:
-      label: Request Owner
+      label: Request owner
+      description: Who owns this request internally?
+      placeholder: "Name"
+    validations:
+      required: false
 
   - type: dropdown
     id: priority
     attributes:
       label: Priority
+      description: Select the priority of this request.
       options:
-        - Low
-        - Medium
-        - High
-        - Critical
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+    validations:
+      required: false
 
   - type: textarea
-    id: reason
+    id: reason-for-request
     attributes:
-      label: Reason for Request
+      label: Reason for request
+      description: Why is this request needed?
+      placeholder: "Please explain the reason for this request."
+    validations:
+      required: false
 
   - type: input
-    id: requesters
+    id: amount-requesters
     attributes:
-      label: Amount of Requesters
+      label: Amount of requesters
       description: Filled in internally.
+      placeholder: "e.g. 5"
+    validations:
+      required: false
+
+  - type: textarea
+    id: general-example
+    attributes:
+      label: Example / Additional context
+      description: Provide an example if relevant.
+      placeholder: "e.g. Sportway and 5 locations from BSG"
+    validations:
+      required: false
+
 
   - type: markdown
     attributes:
       value: |
-        # 2. Current Model and Improvement Scope
+        ## 2. Video / Model Requirements
 
-  - type: dropdown
-    id: model
+  - type: checkboxes
+    id: vd-pro
     attributes:
-      label: Model / Feature
+      label: VD Pro
       options:
-        - VD Pro - Main
-        - VD Pro - Tactical
-        - VD Pro - Close-Up
-        - VD Pro - Specific Event Moment
-        - VD Regular - Main
-        - VD Regular - Tactical
-        - Event Detection
-        - Other
+        - label: Main
+        - label: Tactical
+        - label: Close-Up
+        - label: Specific Event Moment
 
-  - type: input
-    id: model_version
+  - type: checkboxes
+    id: vd-regular
     attributes:
-      label: Current Model Version
-
-  - type: textarea
-    id: current_usage
-    attributes:
-      label: Where Is the Model Currently Used?
-
-  - type: textarea
-    id: current_performance
-    attributes:
-      label: Current Performance / Known Limitations
-
-  - type: textarea
-    id: examples
-    attributes:
-      label: Examples of Issues or Undesired Output
-      description: Add links to clips, screenshots, or match references.
-
-  - type: textarea
-    id: improvement
-    attributes:
-      label: What Needs to Improve?
-
-  - type: textarea
-    id: desired_output
-    attributes:
-      label: Expected Model Behaviour / Desired Output
-
-  - type: dropdown
-    id: improvement_area
-    attributes:
-      label: Main Improvement Area
+      label: VD Regular
       options:
-        - Accuracy / Quality
-        - Consistency / Reliability
-        - Coverage
-        - Robustness
-        - Specific Events or Situations
-        - Other
+        - label: Main
+        - label: Tactical
 
-  - type: dropdown
-    id: scope
+  - type: checkboxes
+    id: other-features
     attributes:
-      label: Scope of Improvement
+      label: Other features
       options:
-        - General improvement for all customers
-        - Specific sport / competition
-        - Customer-specific improvement
-        - To be assessed
+        - label: Event Detection
+        - label: New feature
+        - label: Other
 
-  - type: textarea
-    id: unchanged
-    attributes:
-      label: What Should Remain Unchanged?
 
   - type: markdown
     attributes:
       value: |
-        # 3. Business / Sales
+        ## 3. Business / Sales
 
-  - type: input
-    id: sales_customer
+  - type: dropdown
+    id: customer-prospect
     attributes:
       label: Customer / Prospect
+      options:
+        - Customer
+        - Prospect
+    validations:
+      required: false
 
   - type: dropdown
-    id: customer_status
+    id: customer-status
     attributes:
-      label: Customer Status
+      label: New customer / Existing customer
       options:
         - New customer
         - Existing customer
-        - Prospect
-        - Other
+    validations:
+      required: false
 
   - type: dropdown
-    id: contract_related
+    id: contract-deal
     attributes:
-      label: Contract / Deal Related?
+      label: Contract / Deal related?
       options:
         - "Yes"
         - "No"
-        - To be confirmed
+        - "Partially / Indirectly"
+    validations:
+      required: false
 
   - type: textarea
-    id: revenue
+    id: revenue-potential
     attributes:
-      label: Revenue Potential / Retention Impact
-
-  - type: textarea
-    id: expected_scale
-    attributes:
-      label: Expected Number of Users / Teams / Matches / Locations
+      label: Revenue potential
+      placeholder: "e.g. €50k ARR, expansion opportunity, new deal, retention..."
+    validations:
+      required: false
 
   - type: input
-    id: target_market
+    id: expected-users
     attributes:
-      label: Target Market / League / Competition
+      label: Expected number of users / teams / matches
+      placeholder: "e.g. 500 users / 20 teams / 1,000 matches"
+    validations:
+      required: false
+
+  - type: input
+    id: target-market
+    attributes:
+      label: Target market / league / competition
+      placeholder: "e.g. Netherlands / Eredivisie / UEFA"
+    validations:
+      required: false
 
   - type: dropdown
-    id: strategic_importance
+    id: strategic-importance
     attributes:
-      label: Strategic Importance
+      label: Strategic importance
       options:
-        - Low
-        - Medium
-        - High
         - Critical
-        - To be assessed
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
 
   - type: dropdown
-    id: reusability
+    id: customer-specific
     attributes:
-      label: Customer-Specific or Reusable?
+      label: Customer-specific or reusable?
       options:
         - Customer-specific
         - Reusable for multiple customers
         - Potentially reusable
-        - To be assessed
+    validations:
+      required: false
 
   - type: textarea
-    id: business_reason
+    id: business-reason
     attributes:
-      label: Why Is This Needed to Win or Retain the Customer?
+      label: Why is this feature/model needed to win or retain the customer?
+      placeholder: "Explain the commercial importance of this request."
+    validations:
+      required: false
 
-  - type: textarea
-    id: impact_if_not_delivered
-    attributes:
-      label: Business Impact if Not Delivered
 
   - type: markdown
     attributes:
       value: |
-        # 4. Model and Technical Requirements
+        ## 4. Model Requirements
 
   - type: textarea
-    id: current_quality
+    id: required-quality
     attributes:
-      label: Current Quality / Baseline
-
-  - type: textarea
-    id: target_quality
-    attributes:
-      label: Target Quality / Success Criteria
+      label: Required quality
+      placeholder: "e.g. 95% accuracy, production quality, MVP quality..."
+    validations:
+      required: false
 
   - type: textarea
     id: dependencies
     attributes:
-      label: Dependencies or Technical Constraints
+      label: Dependencies
+      placeholder: "List technical, data, product, or other dependencies."
+    validations:
+      required: false
 
   - type: textarea
-    id: reusable_functionality
+    id: reusable-functionality
     attributes:
-      label: Existing Models / Functionality That Can Be Reused
+      label: Existing model/functionality that can be reused
+      placeholder: "Model name, feature, GitHub issue, etc."
+    validations:
+      required: false
 
   - type: textarea
-    id: tradeoffs
+    id: model-requirements-guide
     attributes:
-      label: Potential Side Effects or Trade-offs
-
-  - type: textarea
-    id: requirements_guide
-    attributes:
-      label: Model Requirements Guide
-      description: Add a link or reference to the relevant guide.
+      label: Model requirements guide (Attachment)
+      description: Drag and drop the relevant attachment here or paste a link.
+      placeholder: "Attachment or link"
+    validations:
+      required: false
 
   - type: input
-    id: rules_contact
+    id: rules-contact
     attributes:
-      label: Contact Person for Rules / Special Events
+      label: Contactperson for Rules / Special Events
+      placeholder: "Name / Team / Slack handle"
+    validations:
+      required: false
+
 
   - type: markdown
     attributes:
       value: |
-        # 5. Data and Validation
+        ## 5. Data
+
+  - type: textarea
+    id: data-availability
+    attributes:
+      label: Data availability
+      placeholder: "Describe available video, events, annotations, metadata, etc."
+    validations:
+      required: false
 
   - type: dropdown
-    id: data_available
+    id: data-requirements-checked
     attributes:
-      label: Is Sufficient Data Available?
+      label: Data requirements are checked
       options:
         - "Yes"
         - "No"
-        - Partially
-        - To be confirmed
-
-  - type: dropdown
-    id: data_checked
-    attributes:
-      label: Have Data Requirements Been Checked?
-      options:
-        - "Yes"
-        - "No"
-        - To be confirmed
-
-  - type: textarea
-    id: data_sources
-    attributes:
-      label: Available Data Sources / Sample Matches
-
-  - type: textarea
-    id: data_gaps
-    attributes:
-      label: Data Gaps or Additional Data Needed
-
-  - type: textarea
-    id: annotation
-    attributes:
-      label: Annotation Requirements
+        - "In progress"
+    validations:
+      required: false
 
   - type: input
-    id: data_owner
+    id: target-test-date
     attributes:
-      label: Responsible Team / Owner
-
-  - type: input
-    id: target_test_date
-    attributes:
-      label: Target Test Date
+      label: Target test date
       placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
 
   - type: textarea
-    id: test_scenarios
+    id: annotation-requirements
     attributes:
-      label: Test Locations / Matches / Scenarios
-
-  - type: textarea
-    id: validation
-    attributes:
-      label: Validation Method and Acceptance Criteria
+      label: Annotation requirements
+      placeholder: "Describe required annotations, events, labels, quality, volume, etc."
+    validations:
+      required: false
 
   - type: input
-    id: validator
+    id: responsible-team
     attributes:
-      label: Who Will Validate and Approve the Improvement?
-
-  - type: markdown
-    attributes:
-      value: |
-        # 6. Expected Outcome and Internal Assessment
-
-  - type: textarea
-    id: expected_outcome
-    attributes:
-      label: Expected Outcome / Definition of Success
-
-  - type: textarea
-    id: expected_benefits
-    attributes:
-      label: Expected Customer / Business Benefit
-
-  - type: textarea
-    id: internal_assessment
-    attributes:
-      label: Internal Assessment
-      description: For internal use - feasibility, effort, dependencies, risks, owner, and planned delivery date.
-
-  - type: dropdown
-    id: status
-    attributes:
-      label: Request Status
-      options:
-        - Submitted
-        - Under assessment
-        - Approved
-        - In development
-        - In testing
-        - Delivered
-        - Rejected / On hold
+      label: Responsible team / owner
+      placeholder: "Team / Name"
+    validations:
+      required: false

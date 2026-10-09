@@ -1,5 +1,5 @@
-name: New Request
-description: Submit a new feature, model request
+name: New AI Model
+description: Submit a new model request
 
 body:
 

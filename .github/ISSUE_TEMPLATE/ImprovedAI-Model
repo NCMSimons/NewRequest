@@ -1,5 +1,5 @@
-name: New AI Model
-description: Submit a new model request
+name: Improved AI Model
+description: Submit a new improvement model request 
 
 body:
 

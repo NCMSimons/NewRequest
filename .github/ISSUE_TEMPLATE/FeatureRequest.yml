@@ -8,49 +8,38 @@ body:
     attributes:
       value: |
         ## 1. General Information
-        Please provide any relevant information about the feature request.
         All fields are optional.
 
   - type: input
     id: feature_title
     attributes:
       label: Feature / Request Title
-      description: Short and descriptive title for the request.
-      placeholder: e.g. Improve camera selection functionality
 
   - type: input
     id: sport_product_platform
     attributes:
       label: Sport / Product / Platform
-      description: Which sport, product, or platform is affected?
-      placeholder: e.g. Football, Virtual Director, Platform
 
   - type: input
     id: target_date
     attributes:
       label: Target Date
-      description: When is this feature ideally needed?
       placeholder: "YYYY-MM-DD"
 
   - type: input
     id: customer
     attributes:
       label: Customer
-      description: Customer or prospect related to this request.
-      placeholder: Customer name
 
   - type: input
     id: request_owner
     attributes:
       label: Request Owner
-      description: Person responsible for submitting or following up on this request.
-      placeholder: Name
 
   - type: dropdown
     id: priority
     attributes:
       label: Priority
-      description: Indicate the requested priority.
       options:
         - Low
         - Medium
@@ -58,24 +47,20 @@ body:
         - Critical
 
   - type: textarea
-    id: reason_for_request
+    id: reason
     attributes:
       label: Reason for Request
-      description: Why is this request needed?
-      placeholder: Describe the reason for this request.
 
   - type: input
     id: amount_of_requesters
     attributes:
       label: Amount of Requesters
-      description: Number of people, customers, or teams requesting this feature. To be completed internally.
-      placeholder: Filled in internally
+      description: Filled in internally.
 
   - type: dropdown
     id: request_type
     attributes:
       label: Request Type
-      description: Select the type that best describes this request.
       options:
         - New feature / functionality
         - Improvement to existing functionality
@@ -89,7 +74,6 @@ body:
     id: virtual_director_version
     attributes:
       label: Virtual Director Version
-      description: If this request concerns Virtual Director functionality, select the relevant version.
       options:
         - VD Pro
         - VD Regular
@@ -100,63 +84,47 @@ body:
   - type: markdown
     attributes:
       value: |
-        ---
         ## 2. Problem & Functional Requirements
 
   - type: textarea
-    id: problem_to_solve
+    id: problem
     attributes:
       label: What Problem Are We Trying to Solve?
-      description: Describe the problem or opportunity.
-      placeholder: What problem are we trying to solve?
 
   - type: textarea
     id: current_situation
     attributes:
       label: Current Situation / Existing Workflow
-      description: Explain how the process or functionality currently works.
-      placeholder: Describe the current situation or workflow.
 
   - type: textarea
     id: missing_functionality
     attributes:
       label: What Is Missing or Not Working as Expected?
-      description: Describe the limitations, gaps, or issues.
-      placeholder: What is missing or not working as expected?
 
   - type: textarea
     id: requested_functionality
     attributes:
       label: Requested Functionality / Proposed Improvement
-      description: Describe the requested feature or improvement.
-      placeholder: What would you like to see implemented?
 
   - type: textarea
     id: expected_behaviour
     attributes:
       label: Expected Behaviour / Desired Outcome
-      description: Explain how the feature should work and what the result should be.
-      placeholder: Describe the expected behaviour or outcome.
 
   - type: textarea
     id: target_users
     attributes:
       label: Who Will Use This Feature?
-      description: Identify the intended users, customers, or internal teams.
-      placeholder: Describe the target users.
 
   - type: textarea
     id: use_cases
     attributes:
       label: Main Use Cases / User Scenarios
-      description: Provide examples of when and how the feature would be used.
-      placeholder: Describe the main use cases or user scenarios.
 
   - type: dropdown
     id: feature_scope
     attributes:
-      label: New Feature or Extension?
-      description: Indicate whether this is new functionality or an extension of existing functionality.
+      label: Is This a New Feature or an Extension?
       options:
         - Completely new feature
         - Extension of existing functionality
@@ -167,34 +135,27 @@ body:
     id: references
     attributes:
       label: Examples, Screenshots, Mock-ups or Reference Links
-      description: Add any supporting information that helps explain the request.
-      placeholder: Paste links or describe relevant examples.
+      description: Add relevant links or examples if available.
 
   - type: textarea
     id: additional_requirements
     attributes:
       label: Additional Requirements or Constraints
-      description: Include any other relevant requirements, limitations, or considerations.
-      placeholder: Additional information
 
   - type: markdown
     attributes:
       value: |
-        ---
         ## 3. Business / Sales
 
   - type: input
     id: customer_prospect
     attributes:
       label: Customer / Prospect
-      description: Which customer or prospect is associated with this request?
-      placeholder: Customer or prospect name
 
   - type: dropdown
     id: customer_status
     attributes:
       label: Customer Status
-      description: Is this a new or existing customer?
       options:
         - New customer
         - Existing customer
@@ -206,38 +167,30 @@ body:
     id: contract_deal_related
     attributes:
       label: Contract / Deal Related?
-      description: Is this request linked to a contract, renewal, or commercial deal?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
         - To be confirmed
 
   - type: textarea
     id: revenue_potential
     attributes:
       label: Revenue Potential
-      description: Describe the expected revenue opportunity, if known.
-      placeholder: Expected revenue or commercial opportunity
 
   - type: textarea
     id: expected_scale
     attributes:
       label: Expected Number of Users / Teams / Matches
-      description: Estimate the expected usage or scale of the feature.
-      placeholder: Number of users, teams, matches, or locations
 
   - type: input
     id: target_market
     attributes:
       label: Target Market / League / Competition
-      description: Which market, league, or competition is relevant?
-      placeholder: e.g. National leagues, amateur football
 
   - type: dropdown
     id: strategic_importance
     attributes:
       label: Strategic Importance
-      description: How important is this request strategically?
       options:
         - Low
         - Medium
@@ -248,8 +201,7 @@ body:
   - type: dropdown
     id: reusability
     attributes:
-      label: Customer-Specific or Reusable?
-      description: Can this feature be used by other customers as well?
+      label: Is This Customer-Specific or Reusable?
       options:
         - Customer-specific
         - Reusable for multiple customers
@@ -260,5 +212,3 @@ body:
     id: business_justification
     attributes:
       label: Why Is This Feature Needed to Win or Retain the Customer?
-      description: Explain the commercial value and the impact on customer acquisition or retention.
-      placeholder: Describe why this feature matters for winning or retaining the customer.

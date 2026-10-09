@@ -1,0 +1,309 @@
+name: Feature Request
+description: Submit a new feature request
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 1. General
+
+        Please provide the general information about the request.
+
+  - type: input
+    id: sport
+    attributes:
+      label: Sport
+      description: Which sport is this request for?
+      placeholder: "e.g. Football"
+    validations:
+      required: false
+
+  - type: input
+    id: target-date
+    attributes:
+      label: Target date
+      description: When is this request needed?
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
+
+  - type: input
+    id: customer-client
+    attributes:
+      label: Customer / Client
+      description: Who is requesting or benefiting from this item?
+      placeholder: "e.g. Sportway"
+    validations:
+      required: false
+
+  - type: input
+    id: request-owner
+    attributes:
+      label: Request owner
+      description: Who owns this request internally?
+      placeholder: "Name"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Select the priority of this request.
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+    validations:
+      required: false
+
+  - type: textarea
+    id: reason-for-request
+    attributes:
+      label: Reason for request
+      description: Why is this request needed?
+      placeholder: "Please explain the reason for this request."
+    validations:
+      required: false
+
+  - type: input
+    id: amount-requesters
+    attributes:
+      label: Amount of requesters
+      description: Filled in internally.
+      placeholder: "e.g. 5"
+    validations:
+      required: false
+
+  - type: textarea
+    id: general-example
+    attributes:
+      label: Example / Additional context
+      description: Provide an example if relevant.
+      placeholder: "e.g. Sportway and 5 locations from BSG"
+    validations:
+      required: false
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 2. Video / Model Requirements
+
+  - type: checkboxes
+    id: vd-pro
+    attributes:
+      label: VD Pro
+      options:
+        - label: Main
+        - label: Tactical
+        - label: Close-Up
+        - label: Specific Event Moment
+
+  - type: checkboxes
+    id: vd-regular
+    attributes:
+      label: VD Regular
+      options:
+        - label: Main
+        - label: Tactical
+
+  - type: checkboxes
+    id: other-features
+    attributes:
+      label: Other features
+      options:
+        - label: Event Detection
+        - label: New feature
+        - label: Other
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 3. Business / Sales
+
+  - type: dropdown
+    id: customer-prospect
+    attributes:
+      label: Customer / Prospect
+      options:
+        - Customer
+        - Prospect
+    validations:
+      required: false
+
+  - type: dropdown
+    id: customer-status
+    attributes:
+      label: New customer / Existing customer
+      options:
+        - New customer
+        - Existing customer
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contract-deal
+    attributes:
+      label: Contract / Deal related?
+      options:
+        - "Yes"
+        - "No"
+        - "Partially / Indirectly"
+    validations:
+      required: false
+
+  - type: textarea
+    id: revenue-potential
+    attributes:
+      label: Revenue potential
+      placeholder: "e.g. €50k ARR, expansion opportunity, new deal, retention..."
+    validations:
+      required: false
+
+  - type: input
+    id: expected-users
+    attributes:
+      label: Expected number of users / teams / matches
+      placeholder: "e.g. 500 users / 20 teams / 1,000 matches"
+    validations:
+      required: false
+
+  - type: input
+    id: target-market
+    attributes:
+      label: Target market / league / competition
+      placeholder: "e.g. Netherlands / Eredivisie / UEFA"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: strategic-importance
+    attributes:
+      label: Strategic importance
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
+
+  - type: dropdown
+    id: customer-specific
+    attributes:
+      label: Customer-specific or reusable?
+      options:
+        - Customer-specific
+        - Reusable for multiple customers
+        - Potentially reusable
+    validations:
+      required: false
+
+  - type: textarea
+    id: business-reason
+    attributes:
+      label: Why is this feature/model needed to win or retain the customer?
+      placeholder: "Explain the commercial importance of this request."
+    validations:
+      required: false
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 4. Model Requirements
+
+  - type: textarea
+    id: required-quality
+    attributes:
+      label: Required quality
+      placeholder: "e.g. 95% accuracy, production quality, MVP quality..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      placeholder: "List technical, data, product, or other dependencies."
+    validations:
+      required: false
+
+  - type: textarea
+    id: reusable-functionality
+    attributes:
+      label: Existing model/functionality that can be reused
+      placeholder: "Model name, feature, GitHub issue, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: model-requirements-guide
+    attributes:
+      label: Model requirements guide (Attachment)
+      description: Drag and drop the relevant attachment here or paste a link.
+      placeholder: "Attachment or link"
+    validations:
+      required: false
+
+  - type: input
+    id: rules-contact
+    attributes:
+      label: Contactperson for Rules / Special Events
+      placeholder: "Name / Team / Slack handle"
+    validations:
+      required: false
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 5. Data
+
+  - type: textarea
+    id: data-availability
+    attributes:
+      label: Data availability
+      placeholder: "Describe available video, events, annotations, metadata, etc."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: data-requirements-checked
+    attributes:
+      label: Data requirements are checked
+      options:
+        - "Yes"
+        - "No"
+        - "In progress"
+    validations:
+      required: false
+
+  - type: input
+    id: target-test-date
+    attributes:
+      label: Target test date
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
+
+  - type: textarea
+    id: annotation-requirements
+    attributes:
+      label: Annotation requirements
+      placeholder: "Describe required annotations, events, labels, quality, volume, etc."
+    validations:
+      required: false
+
+  - type: input
+    id: responsible-team
+    attributes:
+      label: Responsible team / owner
+      placeholder: "Team / Name"
+    validations:
+      required: false

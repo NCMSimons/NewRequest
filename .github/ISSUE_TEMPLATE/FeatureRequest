@@ -1,309 +1,264 @@
-name: Feature Request
-description: Submit a new feature request
+
+name: Nes Feature Request
+description: Submit a request for a new feature or an improvement to existing functionality.
+title: "[Feature Request] "
 
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## 1. General
-
-        Please provide the general information about the request.
-
-  - type: input
-    id: sport
-    attributes:
-      label: Sport
-      description: Which sport is this request for?
-      placeholder: "e.g. Football"
-    validations:
-      required: false
+        ## 1. General Information
+        Please provide any relevant information about the feature request.
+        All fields are optional.
 
   - type: input
-    id: target-date
+    id: feature_title
     attributes:
-      label: Target date
-      description: When is this request needed?
+      label: Feature / Request Title
+      description: Short and descriptive title for the request.
+      placeholder: e.g. Improve camera selection functionality
+
+  - type: input
+    id: sport_product_platform
+    attributes:
+      label: Sport / Product / Platform
+      description: Which sport, product, or platform is affected?
+      placeholder: e.g. Football, Virtual Director, Platform
+
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Date
+      description: When is this feature ideally needed?
       placeholder: "YYYY-MM-DD"
-    validations:
-      required: false
 
   - type: input
-    id: customer-client
+    id: customer
     attributes:
-      label: Customer / Client
-      description: Who is requesting or benefiting from this item?
-      placeholder: "e.g. Sportway"
-    validations:
-      required: false
+      label: Customer
+      description: Customer or prospect related to this request.
+      placeholder: Customer name
 
   - type: input
-    id: request-owner
+    id: request_owner
     attributes:
-      label: Request owner
-      description: Who owns this request internally?
-      placeholder: "Name"
-    validations:
-      required: false
+      label: Request Owner
+      description: Person responsible for submitting or following up on this request.
+      placeholder: Name
 
   - type: dropdown
     id: priority
     attributes:
       label: Priority
-      description: Select the priority of this request.
+      description: Indicate the requested priority.
       options:
-        - "1"
-        - "2"
-        - "3"
-        - "4"
-        - "5"
-    validations:
-      required: false
+        - Low
+        - Medium
+        - High
+        - Critical
 
   - type: textarea
-    id: reason-for-request
+    id: reason_for_request
     attributes:
-      label: Reason for request
+      label: Reason for Request
       description: Why is this request needed?
-      placeholder: "Please explain the reason for this request."
-    validations:
-      required: false
+      placeholder: Describe the reason for this request.
 
   - type: input
-    id: amount-requesters
+    id: amount_of_requesters
     attributes:
-      label: Amount of requesters
-      description: Filled in internally.
-      placeholder: "e.g. 5"
-    validations:
-      required: false
+      label: Amount of Requesters
+      description: Number of people, customers, or teams requesting this feature. To be completed internally.
+      placeholder: Filled in internally
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request Type
+      description: Select the type that best describes this request.
+      options:
+        - New feature / functionality
+        - Improvement to existing functionality
+        - Feature on Virtual Director functionality
+        - Integration / API
+        - Automation / workflow improvement
+        - Performance / scalability
+        - Other
+
+  - type: dropdown
+    id: virtual_director_version
+    attributes:
+      label: Virtual Director Version
+      description: If this request concerns Virtual Director functionality, select the relevant version.
+      options:
+        - VD Pro
+        - VD Regular
+        - VD Portable
+        - Not applicable
+        - Other
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 2. Problem & Functional Requirements
 
   - type: textarea
-    id: general-example
+    id: problem_to_solve
     attributes:
-      label: Example / Additional context
-      description: Provide an example if relevant.
-      placeholder: "e.g. Sportway and 5 locations from BSG"
-    validations:
-      required: false
+      label: What Problem Are We Trying to Solve?
+      description: Describe the problem or opportunity.
+      placeholder: What problem are we trying to solve?
 
+  - type: textarea
+    id: current_situation
+    attributes:
+      label: Current Situation / Existing Workflow
+      description: Explain how the process or functionality currently works.
+      placeholder: Describe the current situation or workflow.
+
+  - type: textarea
+    id: missing_functionality
+    attributes:
+      label: What Is Missing or Not Working as Expected?
+      description: Describe the limitations, gaps, or issues.
+      placeholder: What is missing or not working as expected?
+
+  - type: textarea
+    id: requested_functionality
+    attributes:
+      label: Requested Functionality / Proposed Improvement
+      description: Describe the requested feature or improvement.
+      placeholder: What would you like to see implemented?
+
+  - type: textarea
+    id: expected_behaviour
+    attributes:
+      label: Expected Behaviour / Desired Outcome
+      description: Explain how the feature should work and what the result should be.
+      placeholder: Describe the expected behaviour or outcome.
+
+  - type: textarea
+    id: target_users
+    attributes:
+      label: Who Will Use This Feature?
+      description: Identify the intended users, customers, or internal teams.
+      placeholder: Describe the target users.
+
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: Main Use Cases / User Scenarios
+      description: Provide examples of when and how the feature would be used.
+      placeholder: Describe the main use cases or user scenarios.
+
+  - type: dropdown
+    id: feature_scope
+    attributes:
+      label: New Feature or Extension?
+      description: Indicate whether this is new functionality or an extension of existing functionality.
+      options:
+        - Completely new feature
+        - Extension of existing functionality
+        - Improvement or modification of existing functionality
+        - Not sure yet
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Examples, Screenshots, Mock-ups or Reference Links
+      description: Add any supporting information that helps explain the request.
+      placeholder: Paste links or describe relevant examples.
+
+  - type: textarea
+    id: additional_requirements
+    attributes:
+      label: Additional Requirements or Constraints
+      description: Include any other relevant requirements, limitations, or considerations.
+      placeholder: Additional information
 
   - type: markdown
     attributes:
       value: |
-        ## 2. Video / Model Requirements
-
-  - type: checkboxes
-    id: vd-pro
-    attributes:
-      label: VD Pro
-      options:
-        - label: Main
-        - label: Tactical
-        - label: Close-Up
-        - label: Specific Event Moment
-
-  - type: checkboxes
-    id: vd-regular
-    attributes:
-      label: VD Regular
-      options:
-        - label: Main
-        - label: Tactical
-
-  - type: checkboxes
-    id: other-features
-    attributes:
-      label: Other features
-      options:
-        - label: Event Detection
-        - label: New feature
-        - label: Other
-
-
-  - type: markdown
-    attributes:
-      value: |
+        ---
         ## 3. Business / Sales
 
-  - type: dropdown
-    id: customer-prospect
+  - type: input
+    id: customer_prospect
     attributes:
       label: Customer / Prospect
-      options:
-        - Customer
-        - Prospect
-    validations:
-      required: false
+      description: Which customer or prospect is associated with this request?
+      placeholder: Customer or prospect name
 
   - type: dropdown
-    id: customer-status
+    id: customer_status
     attributes:
-      label: New customer / Existing customer
+      label: Customer Status
+      description: Is this a new or existing customer?
       options:
         - New customer
         - Existing customer
-    validations:
-      required: false
+        - Prospect
+        - Internal request
+        - Other
 
   - type: dropdown
-    id: contract-deal
+    id: contract_deal_related
     attributes:
-      label: Contract / Deal related?
+      label: Contract / Deal Related?
+      description: Is this request linked to a contract, renewal, or commercial deal?
       options:
-        - "Yes"
-        - "No"
-        - "Partially / Indirectly"
-    validations:
-      required: false
+        - Yes
+        - No
+        - To be confirmed
 
   - type: textarea
-    id: revenue-potential
+    id: revenue_potential
     attributes:
-      label: Revenue potential
-      placeholder: "e.g. €50k ARR, expansion opportunity, new deal, retention..."
-    validations:
-      required: false
+      label: Revenue Potential
+      description: Describe the expected revenue opportunity, if known.
+      placeholder: Expected revenue or commercial opportunity
+
+  - type: textarea
+    id: expected_scale
+    attributes:
+      label: Expected Number of Users / Teams / Matches
+      description: Estimate the expected usage or scale of the feature.
+      placeholder: Number of users, teams, matches, or locations
 
   - type: input
-    id: expected-users
+    id: target_market
     attributes:
-      label: Expected number of users / teams / matches
-      placeholder: "e.g. 500 users / 20 teams / 1,000 matches"
-    validations:
-      required: false
-
-  - type: input
-    id: target-market
-    attributes:
-      label: Target market / league / competition
-      placeholder: "e.g. Netherlands / Eredivisie / UEFA"
-    validations:
-      required: false
+      label: Target Market / League / Competition
+      description: Which market, league, or competition is relevant?
+      placeholder: e.g. National leagues, amateur football
 
   - type: dropdown
-    id: strategic-importance
+    id: strategic_importance
     attributes:
-      label: Strategic importance
+      label: Strategic Importance
+      description: How important is this request strategically?
       options:
-        - Critical
-        - High
-        - Medium
         - Low
-    validations:
-      required: false
+        - Medium
+        - High
+        - Critical
+        - To be assessed
 
   - type: dropdown
-    id: customer-specific
+    id: reusability
     attributes:
-      label: Customer-specific or reusable?
+      label: Customer-Specific or Reusable?
+      description: Can this feature be used by other customers as well?
       options:
         - Customer-specific
         - Reusable for multiple customers
         - Potentially reusable
-    validations:
-      required: false
+        - To be assessed
 
   - type: textarea
-    id: business-reason
+    id: business_justification
     attributes:
-      label: Why is this feature/model needed to win or retain the customer?
-      placeholder: "Explain the commercial importance of this request."
-    validations:
-      required: false
-
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 4. Model Requirements
-
-  - type: textarea
-    id: required-quality
-    attributes:
-      label: Required quality
-      placeholder: "e.g. 95% accuracy, production quality, MVP quality..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: dependencies
-    attributes:
-      label: Dependencies
-      placeholder: "List technical, data, product, or other dependencies."
-    validations:
-      required: false
-
-  - type: textarea
-    id: reusable-functionality
-    attributes:
-      label: Existing model/functionality that can be reused
-      placeholder: "Model name, feature, GitHub issue, etc."
-    validations:
-      required: false
-
-  - type: textarea
-    id: model-requirements-guide
-    attributes:
-      label: Model requirements guide (Attachment)
-      description: Drag and drop the relevant attachment here or paste a link.
-      placeholder: "Attachment or link"
-    validations:
-      required: false
-
-  - type: input
-    id: rules-contact
-    attributes:
-      label: Contactperson for Rules / Special Events
-      placeholder: "Name / Team / Slack handle"
-    validations:
-      required: false
-
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 5. Data
-
-  - type: textarea
-    id: data-availability
-    attributes:
-      label: Data availability
-      placeholder: "Describe available video, events, annotations, metadata, etc."
-    validations:
-      required: false
-
-  - type: dropdown
-    id: data-requirements-checked
-    attributes:
-      label: Data requirements are checked
-      options:
-        - "Yes"
-        - "No"
-        - "In progress"
-    validations:
-      required: false
-
-  - type: input
-    id: target-test-date
-    attributes:
-      label: Target test date
-      placeholder: "YYYY-MM-DD"
-    validations:
-      required: false
-
-  - type: textarea
-    id: annotation-requirements
-    attributes:
-      label: Annotation requirements
-      placeholder: "Describe required annotations, events, labels, quality, volume, etc."
-    validations:
-      required: false
-
-  - type: input
-    id: responsible-team
-    attributes:
-      label: Responsible team / owner
-      placeholder: "Team / Name"
-    validations:
-      required: false
+      label: Why Is This Feature Needed to Win or Retain the Customer?
+      description: Explain the commercial value and the impact on customer acquisition or retention.
+      placeholder: Describe why this feature matters for winning or retaining the customer.

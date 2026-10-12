@@ -1,6 +1,6 @@
 name: Improved AI Model
 description: Submit a new improvement model request 
-
+title: "[NewModel] "
 body:
 
   - type: markdown

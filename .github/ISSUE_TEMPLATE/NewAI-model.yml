@@ -1,6 +1,6 @@
 name: New AI Model
 description: Submit a new model request
-
+title: "[NewModel] "
 body:
 
   - type: markdown
